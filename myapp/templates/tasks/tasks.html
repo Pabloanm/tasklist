@@ -5,11 +5,12 @@
 {% for task in tasks %}
 
 <div>
-  <h1>
-    {% if task.done == False %} ⏱ {% else %} ✅ {% endif %} {{task.title}}
-  </h1>
-
-  <p>{{task.description}}</p>
+  <h2>
+    {# jinja https://jinja.palletsprojects.com/en/3.1.x/ #} {{task.title}} {% if
+    task.done == False %} ⏱ {% else %} ✅ {% endif %}
+  </h2>
+  <p>Status: {% if task.done == False %} Pending {% else %} Done {% endif %}</p>
+  <p>Description: {{task.description}}</p>
   <p>Project: {{task.project.name}}</p>
   <button>Delete</button>
   <button>✅ Done</button>

@@ -6,8 +6,8 @@
 
 <div>
   <h2>
-    {# jinja https://jinja.palletsprojects.com/en/3.1.x/ #} {{task.title}} {% if
-    task.done == False %} ⏱ {% else %} ✅ {% endif %}
+    {# jinja https://jinja.palletsprojects.com/en/3.1.x/ #} {{task.title}} 
+    {% if task.done == False %} ⏱ {% else %} ✅ {% endif %}
   </h2>
   <p>Status: {% if task.done == False %} Pending {% else %} Done {% endif %}</p>
   <p>Description: {{task.description}}</p>

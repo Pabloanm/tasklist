@@ -14,7 +14,7 @@ def index(request):
 
 
 def about(request):
-    username = 'fazt'
+    username = 'pabloanm'
     return render(request, 'about.html', {
         'username': username
     })
@@ -41,7 +41,7 @@ def tasks(request):
 
 
 def create_task(request):
-    if request.method == 'GET':
+    if request.method == 'GET':        
         return render(request, 'tasks/create_task.html', {
             'form': CreateNewTask()
         })
@@ -60,7 +60,7 @@ def create_project(request):
         Project.objects.create(name=request.POST["name"])
         return redirect('projects')
 
-def project_detail(request, id):
+def project_detail(request, id):    
     project = get_object_or_404(Project, id=id)
     tasks = Task.objects.filter(project_id=id)
     return render(request, 'projects/detail.html', {
